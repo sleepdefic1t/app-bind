@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -42,8 +43,8 @@
  * limitations under the License.
  ******************************************************************************/
 
-#ifndef ARK_DISPLAY_NANO_H
-#define ARK_DISPLAY_NANO_H
+#ifndef BND_DISPLAY_NANO_H
+#define BND_DISPLAY_NANO_H
 
 #include <stdint.h>
 
@@ -53,4 +54,4 @@ void SetUxDisplay(size_t steps, size_t extendedStep);
 ////////////////////////////////////////////////////////////////////////////////
 void ui_idle(void);
 
-#endif  // #define ARK_DISPLAY_NANO_H
+#endif  // #define BND_DISPLAY_NANO_H

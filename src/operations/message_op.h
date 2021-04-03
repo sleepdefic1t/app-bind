@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_MESSAGE_H
-#define ARK_OPERATIONS_MESSAGE_H
+#ifndef BND_OPERATIONS_MESSAGE_H
+#define BND_OPERATIONS_MESSAGE_H
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -80,4 +81,4 @@ bool handleMessage(const uint8_t *buffer, size_t length) {
     return true;
 }
 
-#endif  // #define ARK_OPERATIONS_MESSAGE_H
+#endif  // #define BND_OPERATIONS_MESSAGE_H

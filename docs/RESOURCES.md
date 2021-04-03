@@ -1,5 +1,5 @@
 
-# ARK Ledger App Development Resources
+# Compendia Ledger App Development Resources
 
 This section contains some useful resources for learning about Ledger and embedded development—which is especially nuanced and requires additional considerations beyond typical crypto development.
 

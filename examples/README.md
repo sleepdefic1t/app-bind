@@ -1,5 +1,5 @@
 
-# ARK Ledger Example Tests
+# Compendia Ledger Example Tests
 
 ## Requirements
 

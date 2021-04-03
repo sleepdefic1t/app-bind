@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -43,8 +44,8 @@
  *  limitations under the License.
  ******************************************************************************/
 
-#ifndef ARK_UTILS_BASE58_H
-#define ARK_UTILS_BASE58_H
+#ifndef BND_UTILS_BASE58_H
+#define BND_UTILS_BASE58_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -54,4 +55,4 @@ int Base58Encode(const uint8_t *in, size_t length, char *out, size_t *outlen);
 int Base58CheckEncode(const uint8_t *in, size_t length,
                       char *out, size_t outLen);
 
-#endif  // ARK_UTILS_BASE58_H
+#endif  // BND_UTILS_BASE58_H

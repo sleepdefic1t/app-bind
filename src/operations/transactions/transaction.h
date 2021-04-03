@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_TRANSACTION_H
-#define ARK_OPERATIONS_TRANSACTION_H
+#ifndef BND_OPERATIONS_TRANSACTION_H
+#define BND_OPERATIONS_TRANSACTION_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -55,4 +56,4 @@ typedef struct transaction_t {
 #endif  // SUPPORTS_MULTISIGNATURE
 } Transaction;
 
-#endif  // #define ARK_OPERATIONS_TRANSACTION_H
+#endif  // #define BND_OPERATIONS_TRANSACTION_H

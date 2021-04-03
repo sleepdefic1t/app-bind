@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -42,8 +43,8 @@
  * limitations under the License.
  ******************************************************************************/
 
-#ifndef ARK_IO_H
-#define ARK_IO_H
+#ifndef BND_IO_H
+#define BND_IO_H
 
 #include <ux.h>
 #include <os_io_seproxyhal.h>
@@ -53,4 +54,4 @@ uint8_t io_event(unsigned char channel);
 uint16_t io_exchange_al(unsigned char channel, unsigned short tx_len);
 void io_seproxyhal_display(const bagl_element_t *element);
 
-#endif  // #define ARK_IO_H
+#endif  // #define BND_IO_H

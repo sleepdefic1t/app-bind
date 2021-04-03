@@ -1,7 +1,8 @@
 # /*******************************************************************************
-#  * This file is part of the ARK Ledger App.
+#  * This file is part of the Compendia Ledger App.
 #  *
 #  * Copyright (c) ARK Ecosystem <info@ark.io>
+#  * Copyright (c) nOS Limited <contact@nos.io>
 #  *
 #  * The MIT License (MIT)
 #  *
@@ -47,22 +48,18 @@ ifeq ($(BOLOS_SDK),)
 endif
 include $(BOLOS_SDK)/Makefile.defines
 
-APPNAME = Ark
-APP_LOAD_PARAMS=--appFlags 0x240 --curve secp256k1 --path "44'/111'" --path "44'/1'" $(COMMON_LOAD_PARAMS)
+APPNAME = Compendia
+APP_LOAD_PARAMS=--appFlags 0x240 --curve secp256k1 --path "44'/543'" --path "44'/1'" $(COMMON_LOAD_PARAMS)
 
 APPVERSION_M=2
 APPVERSION_N=3
 APPVERSION_P=0
 APPVERSION=$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)
 
-ifeq ($(TARGET_NAME),TARGET_BLUE)
-    ICONNAME=blue_app_ark.gif
+ifeq ($(TARGET_NAME),TARGET_NANOX)
+    ICONNAME=icons/nanox_app_ark.gif
 else
-    ifeq ($(TARGET_NAME),TARGET_NANOX)
-        ICONNAME=icons/nanox_app_ark.gif
-    else
-        ICONNAME=icons/nanos_app_ark.gif
-    endif
+    ICONNAME=icons/nanos_app_ark.gif
 endif
 
 
@@ -185,4 +182,4 @@ dep/%.d: %.c Makefile.genericwallet
 
 
 listvariants:
-	@echo VARIANTS COIN ark
+	@echo VARIANTS COIN bnd

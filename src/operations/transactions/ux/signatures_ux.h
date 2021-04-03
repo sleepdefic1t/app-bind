@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_TRANSACTIONS_UX_SIGNATURES_UX_H
-#define ARK_OPERATIONS_TRANSACTIONS_UX_SIGNATURES_UX_H
+#ifndef BND_OPERATIONS_TRANSACTIONS_UX_SIGNATURES_UX_H
+#define BND_OPERATIONS_TRANSACTIONS_UX_SIGNATURES_UX_H
 
 #include "platform.h"
 
@@ -42,4 +43,4 @@ static const char *const UX_SIGNATURES_LABEL = "Signature";
 size_t SetUxSignatures(const Transaction *transaction, size_t offset);
 
 #endif  // SUPPORTS_MULTISIGNATURE
-#endif  // #define ARK_OPERATIONS_TRANSACTIONS_UX_SIGNATURES_UX_H
+#endif  // #define BND_OPERATIONS_TRANSACTIONS_UX_SIGNATURES_UX_H

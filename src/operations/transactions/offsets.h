@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_TRANSACTIONS_DEFAULTS_OFFSETS_HPP
-#define ARK_TRANSACTIONS_DEFAULTS_OFFSETS_HPP
+#ifndef BND_TRANSACTIONS_DEFAULTS_OFFSETS_HPP
+#define BND_TRANSACTIONS_DEFAULTS_OFFSETS_HPP
 
 #include <stddef.h>
 

@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_TRANSACTION_H
-#define ARK_OPERATIONS_TRANSACTION_H
+#ifndef BND_OPERATIONS_TRANSACTION_H
+#define BND_OPERATIONS_TRANSACTION_H
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -38,4 +39,4 @@ bool handleTransaction(const uint8_t *buffer, size_t size) {
     return deserialize(buffer, size);
 }
 
-#endif  // #ifndef ARK_OPERATIONS_TRANSACTION_H
+#endif  // #ifndef BND_OPERATIONS_TRANSACTION_H

@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_TRANSACTIONS_DESERIALIZER_V1_H
-#define ARK_OPERATIONS_TRANSACTIONS_DESERIALIZER_V1_H
+#ifndef BND_OPERATIONS_TRANSACTIONS_DESERIALIZER_V1_H
+#define BND_OPERATIONS_TRANSACTIONS_DESERIALIZER_V1_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -38,4 +39,4 @@ size_t deserializeHeaderV1(Transaction *transaction,
                            const uint8_t *buffer,
                            size_t size);
 
-#endif  // #define ARK_OPERATIONS_TRANSACTIONS_DESERIALIZER_V1_H
+#endif  // #define BND_OPERATIONS_TRANSACTIONS_DESERIALIZER_V1_H

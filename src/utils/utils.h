@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -42,8 +43,8 @@
  * limitations under the License.
  ******************************************************************************/
 
-#ifndef ARK_UTILS_H
-#define ARK_UTILS_H
+#ifndef BND_UTILS_H
+#define BND_UTILS_H
 
 #if defined(HAVE_BOLOS_SDK)
     #include <os.h>
@@ -106,4 +107,4 @@
 } while(0);
 
 
-#endif  // ARK_UTILS_H
+#endif  // BND_UTILS_H

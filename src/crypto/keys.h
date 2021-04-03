@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_CRYPTO_KEYS_H
-#define ARK_CRYPTO_KEYS_H
+#ifndef BND_CRYPTO_KEYS_H
+#define BND_CRYPTO_KEYS_H
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -43,4 +44,4 @@ typedef struct public_key_context_t {
 ////////////////////////////////////////////////////////////////////////////////
 size_t compressPublicKey(const uint8_t *uncompressed, uint8_t *compressed);
 
-#endif  // #define ARK_CRYPTO_KEYS_H
+#endif  // #define BND_CRYPTO_KEYS_H

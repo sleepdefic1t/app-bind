@@ -1,10 +1,10 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
- *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
  * deal in the Software without restriction, including without limitation the
@@ -24,8 +24,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_CONSTANTS_H
-#define ARK_CONSTANTS_H
+#ifndef BND_CONSTANTS_H
+#define BND_CONSTANTS_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -76,9 +76,9 @@ static const size_t SIG_SCHNORR_LEN     = HASH_64_LEN;
 ////////////////////////////////////////////////////////////////////////////////
 // Token
 static const size_t TOKEN_DECIMALS          = 8U;
-static const char *const TOKEN_NAME         = "ARK";
-static const size_t TOKEN_NAME_LEN          = 3U;       // strlen("ARK")
-static const uint8_t TOKEN_NETWORK_BYTE     = 0x1e;     // ARK Mainnet
+static const char *const TOKEN_NAME         = "BND";
+static const size_t TOKEN_NAME_LEN          = 3U;       // strlen("BND")
+static const uint8_t TOKEN_NETWORK_BYTE     = 0x1e;     // Compendia Mainnet
 
 ////////////////////////////////////////////////////////////////////////////////
 // Transactions
@@ -90,4 +90,4 @@ static const uint8_t TRANSACTION_VERSION_TYPE_2     = 2;
 static const uint8_t VENDORFIELD_V1_MAX_LEN = 64;
 static const uint8_t VENDORFIELD_V2_MAX_LEN = 255;
 
-#endif  // #define ARK_CONSTANTS_H
+#endif  // BND_CONSTANTS_H

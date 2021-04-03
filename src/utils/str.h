@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_UTILS_STR_H
-#define ARK_UTILS_STR_H
+#ifndef BND_UTILS_STR_H
+#define BND_UTILS_STR_H
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -39,4 +40,4 @@ size_t TokenAmountToString(const char *token, size_t tokenLen, size_t decimals,
                            uint64_t amount,
                            char *dst, size_t maxLen);
 
-#endif  // ARK_UTILS_STR_H
+#endif  // BND_UTILS_STR_H

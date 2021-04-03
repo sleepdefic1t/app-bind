@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_CRYPTO_SIGNING_H
-#define ARK_CRYPTO_SIGNING_H
+#ifndef BND_CRYPTO_SIGNING_H
+#define BND_CRYPTO_SIGNING_H
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -57,4 +58,4 @@ uint32_t signSchnorr(const cx_ecfp_private_key_t *privateKey,
                      const uint8_t *hash,
                      uint8_t *signature);
 
-#endif  // #define ARK_CRYPTO_SIGNING_H
+#endif  // #define BND_CRYPTO_SIGNING_H

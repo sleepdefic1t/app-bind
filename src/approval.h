@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -25,8 +26,8 @@
  * 
  ******************************************************************************/
 
-#ifndef ARK_APPROVAL_H
-#define ARK_APPROVAL_H
+#ifndef BND_APPROVAL_H
+#define BND_APPROVAL_H
 
 #include <ux.h>
 #include <os_io_seproxyhal.h>
@@ -36,4 +37,4 @@ unsigned int ioApprove(const bagl_element_t *e);
 unsigned int ioCancel(const bagl_element_t *e);
 unsigned int ioExit(const bagl_element_t *e);
 
-#endif // #define ARK_APPROVAL_H
+#endif // #define BND_APPROVAL_H

@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_PLATFORM_H
-#define ARK_PLATFORM_H
+#ifndef BND_PLATFORM_H
+#define BND_PLATFORM_H
 
 // This file detects available features and improves portability.
 //
@@ -44,4 +45,4 @@
         #define SUPPORTS_MULTISIGNATURE
     #endif
 #endif  // HAVE_BOLOS_SDK
-#endif  // ARK_PLATFORM_H
+#endif  // BND_PLATFORM_H

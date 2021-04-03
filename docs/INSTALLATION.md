@@ -1,17 +1,19 @@
 
-# ARK Ledger App Development Environment Installation and Usage
+# Compendia Ledger App Development Environment Installation and Usage
 
 <!--ts-->
-* [The Vagrant Development Environment](#the-ledger-vagrant-environment)
-  * [Requirements](#requirements)
-  * [Installing Vagrant and VirtualBox](#installing-vagrant-and-virtualbox)
-  * [Initializing the Ledger-Vagrant Machine](#initializing-the-ledger-vagrant-machine)
-  * [Connecting to the Vagrant machine](#connecting-to-the-vagrant-machine)
-  * [Vagrant Troubleshooting](#vagrant-troubleshooting)
-* [Building and Flashing](#building-and-flashing)
-  * [Building the Ledger ARK app](#building-the-ledger-ark-app)
-  * [Flashing the Ledger ARK app](#flashing-the-ledger-ark-app)
-* [Debugging](#debugging)
+- [Compendia Ledger App Development Environment Installation and Usage](#compendia-ledger-app-development-environment-installation-and-usage)
+  - [The Vagrant Development Environment](#the-vagrant-development-environment)
+    - [Requirements](#requirements)
+    - [Installing Vagrant and VirtualBox](#installing-vagrant-and-virtualbox)
+      - [Linux](#linux)
+    - [Connecting to the Vagrant machine](#connecting-to-the-vagrant-machine)
+    - [Vagrant Troubleshooting](#vagrant-troubleshooting)
+  - [Building and Flashing](#building-and-flashing)
+    - [Rebuild Script](#rebuild-script)
+      - [NanoS](#nanos)
+      - [NanoX](#nanox)
+  - [Debugging](#debugging)
 
 <!--te-->
 ## The Vagrant Development Environment
@@ -131,7 +133,7 @@ Connect the Ledger device in before flashing.
 
 The Build and Flash commands are executed from project root:
 
-**Vagrant Shell**: `~/apps/ledger-app-ark`
+**Vagrant Shell**: `~/apps/ledger-app-compendia`
 
 ### Rebuild Script
 

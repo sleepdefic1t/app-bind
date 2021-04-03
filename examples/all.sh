@@ -7,7 +7,7 @@ fi
 
 TEST_DIR="$(dirname "$0")"
 
-printf "\n\n%s\n\n" "Running all ARK Ledger Examples.."
+printf "\n\n%s\n\n" "Running all Ledger Examples.."
 bash ./"${TEST_DIR}"/v1.sh  # (DEPRECATED)
 bash ./"${TEST_DIR}"/v2.sh
 if [[ "$NANOX" == '1' ]]; then

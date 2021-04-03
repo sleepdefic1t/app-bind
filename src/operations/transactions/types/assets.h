@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_TRANSACTIONS_TYPES_ASSETS_H
-#define ARK_OPERATIONS_TRANSACTIONS_TYPES_ASSETS_H
+#ifndef BND_OPERATIONS_TRANSACTIONS_TYPES_ASSETS_H
+#define BND_OPERATIONS_TRANSACTIONS_TYPES_ASSETS_H
 
 #include "transactions/types/transfer.h"
 #include "transactions/types/vote.h"
@@ -55,4 +56,4 @@ typedef union tx_asset_t {
     HtlcRefund                  htlcRefund;             // Type 10
 } tx_asset_t;
 
-#endif  // ARK_OPERATIONS_TRANSACTIONS_TYPES_ASSETS_H
+#endif  // BND_OPERATIONS_TRANSACTIONS_TYPES_ASSETS_H

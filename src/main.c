@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -52,7 +53,7 @@
 extern void ui_idle(void);
 
 ////////////////////////////////////////////////////////////////////////////////
-void ark_main(void) {
+void compendia_main(void) {
     volatile unsigned int tx = 0U;
     volatile unsigned int flags = 0U;
 
@@ -144,7 +145,7 @@ __attribute__((section(".boot"))) int main(void) {
                     BLE_power(1U, "Nano X");
                 #endif  // HAVE_BLE
  
-                ark_main();
+                compendia_main();
             }
             
             // Reset IO and UX.

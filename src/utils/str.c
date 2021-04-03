@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -235,8 +236,8 @@ size_t UintToString(uint64_t value, char *dst, size_t maxLen) {
 // Convert an Amount to a String using a Token Name and Decimal count.
 //
 // e.g.
-// - TokenAmountToString("ARK", 3, 8, 1ULL, dst, 25);
-// - "ARK: 0.00000001"[16]
+// - TokenAmountToString("BIND", 4, 8, 1ULL, dst, 25);
+// - "BIND: 0.00000001"[16]
 //
 // @param const char *token:    token/ticker name.
 // @param size_t tokenLen:      excluding the null-terminator.
@@ -262,7 +263,7 @@ size_t TokenAmountToString(const char *token, size_t tokenLen, size_t decimals,
         MEMCOPY(dst + tokenLen, separator, 2);
         prefixLen += 2;
     }
-  
+
     size_t amountStrLen = UintToString(amount, tmp, maxLen);
 
     if (amountStrLen == 0UL || prefixLen < 0 ||

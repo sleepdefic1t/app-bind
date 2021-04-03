@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,11 +25,11 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_TRANSACTIONS_ASSETS_TYPES_H
-#define ARK_OPERATIONS_TRANSACTIONS_ASSETS_TYPES_H
+#ifndef BND_OPERATIONS_TRANSACTIONS_ASSETS_TYPES_H
+#define BND_OPERATIONS_TRANSACTIONS_ASSETS_TYPES_H
 
 ////////////////////////////////////////////////////////////////////////////////
-// ARK Transaction Types
+// Compendia Transaction Types
 enum TransactionTypes {
     TRANSFER_TYPE                   = 0,
 /*  SECOND_SIGNATURE_TYPE           = 1, */
@@ -43,4 +44,4 @@ enum TransactionTypes {
     HTLC_REFUND_TYPE                = 10
 };
 
-#endif  // ARK_OPERATIONS_TRANSACTIONS_ASSETS_TYPES_H
+#endif  // BND_OPERATIONS_TRANSACTIONS_ASSETS_TYPES_H

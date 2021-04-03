@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,12 +25,12 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_UTILS_HEX_H
-#define ARK_UTILS_HEX_H
+#ifndef BND_UTILS_HEX_H
+#define BND_UTILS_HEX_H
 
 #include <stddef.h>
 #include <stdint.h>
 
 size_t BytesToHex(const uint8_t *src, size_t srcLen, char *dst, size_t dstMax);
 
-#endif  // ARK_UTILS_HEX_H
+#endif  // BND_UTILS_HEX_H

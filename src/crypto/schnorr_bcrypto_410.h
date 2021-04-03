@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -25,8 +26,8 @@
  * 
  ******************************************************************************/
 
-#ifndef ARK_CRYPTO_SCHNORR_BCRYPTO_410_H
-#define ARK_CRYPTO_SCHNORR_BCRYPTO_410_H
+#ifndef BND_CRYPTO_SCHNORR_BCRYPTO_410_H
+#define BND_CRYPTO_SCHNORR_BCRYPTO_410_H
 
 #include <stdint.h>
 
@@ -35,4 +36,4 @@ uint32_t schnorr_sign_bcrypto_410(const uint8_t *privateKey,
                                   const uint8_t *hash,
                                   uint8_t *signature);
 
-#endif  // ARK_CRYPTO_SCHNORR_BCRYPTO_410_H
+#endif  // BND_CRYPTO_SCHNORR_BCRYPTO_410_H

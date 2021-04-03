@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_UTILS_UNPACK_H
-#define ARK_UTILS_UNPACK_H
+#ifndef BND_UTILS_UNPACK_H
+#define BND_UTILS_UNPACK_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -103,4 +104,4 @@ static const uint64_t U4_SHIFT      = U4_SIZE * U8_SIZE;
     ((uint64_t)(U4LE((src), (offset) + U4_SIZE) & U4_MAX)   << U4_SHIFT)    \
                                                 & U8_MAX)
 
-#endif  // ARK_UTILS_UNPACK_H
+#endif  // BND_UTILS_UNPACK_H

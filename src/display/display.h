@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_DISPLAY_H
-#define ARK_DISPLAY_H
+#ifndef BND_DISPLAY_H
+#define BND_DISPLAY_H
 
 #include "platform.h"
 
@@ -33,4 +34,4 @@
     #include "display/nano.h"
 #endif  // TARGET_NANOS || TARGET_NANOX
 
-#endif  // #define ARK_DISPLAY_H
+#endif  // #define BND_DISPLAY_H

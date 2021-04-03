@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_TRANSACTIONS_ASSETS_HTLC_LOCK_H
-#define ARK_OPERATIONS_TRANSACTIONS_ASSETS_HTLC_LOCK_H
+#ifndef BND_OPERATIONS_TRANSACTIONS_ASSETS_HTLC_LOCK_H
+#define BND_OPERATIONS_TRANSACTIONS_ASSETS_HTLC_LOCK_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -47,4 +48,4 @@ typedef struct htlc_lock_asset_t {
 ////////////////////////////////////////////////////////////////////////////////
 size_t deserializeHtlcLock(HtlcLock *lock, const uint8_t *buffer, size_t size);
 
-#endif  // #define ARK_OPERATIONS_TRANSACTIONS_ASSETS_HTLC_LOCK_H
+#endif  // #define BND_OPERATIONS_TRANSACTIONS_ASSETS_HTLC_LOCK_H

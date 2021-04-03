@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # /*****************************************************************************
-#  * This file is part of the ARK Ledger App.
+#  * This file is part of the Compendia Ledger App.
 #  *
 #  * Copyright (c) ARK Ecosystem <info@ark.io>
 #  *
@@ -146,7 +146,7 @@ def get_publickey(pathStr_, path_, pathLength_):
         if comm.sw == 0x6D00 or comm.sw == 0x6F00 or comm.sw == 0x6700:
             print(
                 "\nMake sure your Ledger is connected and unlocked",
-                "with the ARK app opened.\n")
+                "with the Compendia app opened.\n")
     sys.exit()
 
 
@@ -268,7 +268,7 @@ except CommException as comm:
     if comm.sw == 0x6D00 or comm.sw == 0x6F00 or comm.sw == 0x6700:
         print(
             "\nMake sure your Ledger is connected and unlocked",
-            "with the ARK app opened.\n"
+            "with the Compendia app opened.\n"
         )
     if comm.sw == 0x6985:
         print("\nRejected by user.\n")

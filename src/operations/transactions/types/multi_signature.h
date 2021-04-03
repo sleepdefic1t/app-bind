@@ -1,7 +1,8 @@
 /*******************************************************************************
- * This file is part of the ARK Ledger App.
+ * This file is part of the Compendia Ledger App.
  *
  * Copyright (c) ARK Ecosystem <info@ark.io>
+ * Copyright (c) nOS Limited <contact@nos.io>
  *
  * The MIT License (MIT)
  *
@@ -24,8 +25,8 @@
  * SOFTWARE.
  ******************************************************************************/
 
-#ifndef ARK_OPERATIONS_TRANSACTIONS_TYPES_MULTI_SIGNATURE_H
-#define ARK_OPERATIONS_TRANSACTIONS_TYPES_MULTI_SIGNATURE_H
+#ifndef BND_OPERATIONS_TRANSACTIONS_TYPES_MULTI_SIGNATURE_H
+#define BND_OPERATIONS_TRANSACTIONS_TYPES_MULTI_SIGNATURE_H
 
 #include "platform.h"
 
@@ -54,4 +55,4 @@ size_t deserializeMultiSignature(MultiSignature *multiSig,
                                  size_t size);
 
 #endif  // SUPPORTS_MULTISIGNATURE
-#endif  // ARK_OPERATIONS_TRANSACTIONS_TYPES_MULTI_SIGNATURE_H
+#endif  // BND_OPERATIONS_TRANSACTIONS_TYPES_MULTI_SIGNATURE_H
