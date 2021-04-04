@@ -1,0 +1,23 @@
+{
+    "data": {
+        "version": 2,
+        "network": 88,
+        "typeGroup": 100,
+        "type": 0,
+        "nonce": "1",
+        "senderPublicKey": "03a02b9d5fdd1307c2ee4652ba54d492d1fd11a7d1bb3f3a44c4a05e79f19de933",
+        "fee": "0",
+        "amount": "0",
+        "recipientId": "cTUdd5R1WxpLVvNea31WTvuKRpKRft7QGN",
+        "asset": {
+            "stakeCreate": {
+                "duration": 7889400,
+                "amount": "1000000000000",
+                "timestamp": 1234567890
+            }
+        },
+        "signature": "927d59e0e91954ece3285391f51182c3c10620b7c47bcec06b4737dda06fafc8dd111787557ab2f1686cd3e6338f80928e74a3bf2ec1c35fc1c6251fb27e6da8",
+        "id": "bd492a4074f381b3fcf5d40ce25b2e2835f60d63a59aa330d2c8f1e6be920499"
+    },
+    "serialized": "ff0258640000000000010000000000000003a02b9d5fdd1307c2ee4652ba54d492d1fd11a7d1bb3f3a44c4a05e79f19de933000000000000000000f8617800000000000010a5d4e8000000d202964900000000581dfc69b54c7fe901e91d5a9ab78388645e2427ea927d59e0e91954ece3285391f51182c3c10620b7c47bcec06b4737dda06fafc8dd111787557ab2f1686cd3e6338f80928e74a3bf2ec1c35fc1c6251fb27e6da8"
+}
