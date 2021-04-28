@@ -48,18 +48,18 @@ ifeq ($(BOLOS_SDK),)
 endif
 include $(BOLOS_SDK)/Makefile.defines
 
-APPNAME = Compendia
-APP_LOAD_PARAMS=--appFlags 0x240 --curve secp256k1 --path "44'/543'" --path "44'/1'" $(COMMON_LOAD_PARAMS)
+APPNAME = BIND
+APP_LOAD_PARAMS=--appFlags 0x240 --curve secp256k1 --path "44'/543'" --path "44'/111'" --path "44'/1'" $(COMMON_LOAD_PARAMS)
 
-APPVERSION_M=2
-APPVERSION_N=3
+APPVERSION_M=1
+APPVERSION_N=0
 APPVERSION_P=0
 APPVERSION=$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)
 
 ifeq ($(TARGET_NAME),TARGET_NANOX)
-    ICONNAME=icons/nanox_app_ark.gif
+    ICONNAME=icons/nanos_app_bind.gif
 else
-    ICONNAME=icons/nanos_app_ark.gif
+    ICONNAME=icons/nanos_app_bind.gif
 endif
 
 
