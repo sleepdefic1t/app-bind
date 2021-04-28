@@ -63,6 +63,9 @@ static const char *const UX_LABEL_EXPIRATION    = "Expiration";
 static const char *const UX_LABEL_FEE           = "Fee";
 static const char *const UX_LABEL_RECIPIENT     = "Recipient";
 
+static const char *const UX_LABEL_STAKE_TXID    = "Stake TxId";
+static const char *const UX_LABEL_STAKE_DUR     = "Duration";
+
 ////////////////////////////////////////////////////////////////////////////////
 // Numbers
 static const uint64_t UINT64_BASE_10 = 10U;
@@ -83,6 +86,9 @@ static const uint8_t TOKEN_NETWORK_BYTE     = 0x1e;     // Compendia Mainnet
 ////////////////////////////////////////////////////////////////////////////////
 // Transactions
 static const uint8_t TRANSACTION_HEADER             = 0xFF;
+
+static const uint8_t TRANSACTION_TYPEGROUP_1        = 1;
+static const uint8_t TRANSACTION_TYPEGROUP_100      = 100;
 
 static const uint8_t TRANSACTION_VERSION_TYPE_1     = 1;
 static const uint8_t TRANSACTION_VERSION_TYPE_2     = 2;
