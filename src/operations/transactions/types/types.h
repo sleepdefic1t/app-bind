@@ -44,4 +44,13 @@ enum TransactionTypes {
     HTLC_REFUND_TYPE                = 10
 };
 
+////////////////////////////////////////////////////////////////////////////////
+// Compendia Stake Transaction Types
+enum StakeTransactionTypes {
+    STAKE_CREATE                    = 0,
+    STAKE_REDEEM                    = 1,
+    STAKE_CANCEL                    = 2,
+    STAKE_EXTEND                    = 3,
+};
+
 #endif  // BND_OPERATIONS_TRANSACTIONS_ASSETS_TYPES_H
