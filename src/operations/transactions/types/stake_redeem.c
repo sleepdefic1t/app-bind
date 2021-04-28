@@ -36,11 +36,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 size_t deserializeStakeRedeem(StakeRedeem *redeem, const uint8_t *buffer,size_t size) {
-    if (redeem == NULL || buffer == NULL || size < HASH_32_LEN) {
-        return 0U;
+    if (redeem == NULL || buffer == NULL || size < (1ULL + HASH_64_LEN)) {
+        return 0ULL;
     }
 
-    MEMCOPY(redeem->id, buffer, HASH_32_LEN);  // 32 Bytes
+    const size_t hashLen = buffer[0];
+    if (hashLen != HASH_64_LEN) {
+        return 0ULL;
+    }
 
-    return HASH_32_LEN;
+    MEMCOPY(redeem->id, &buffer[1], hashLen);       // 64 Bytes
+
+    return 1ULL + HASH_64_LEN;
 }
