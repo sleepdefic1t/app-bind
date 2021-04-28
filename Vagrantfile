@@ -9,15 +9,15 @@ Vagrant.configure("2") do |config|
                             id: "appsdir",
                             :create => true,
                             type: "virtualbox")
-    config.vm.synced_folder("examples/", "/home/vagrant/apps/ledger-app-compendia/examples/",
+    config.vm.synced_folder("examples/", "/home/vagrant/apps/ledger-app-bind/examples/",
                             id: "examplesdir",
                             :create => true,
                             type: "virtualbox")
-    config.vm.synced_folder("glyphs/", "/home/vagrant/apps/ledger-app-compendia/glyphs/",
+    config.vm.synced_folder("glyphs/", "/home/vagrant/apps/ledger-app-bind/glyphs/",
                             id: "glyphsdir",
                             :create => true,
                             type: "virtualbox")
-    config.vm.synced_folder("src/", "/home/vagrant/apps/ledger-app-compendia/src/",
+    config.vm.synced_folder("src/", "/home/vagrant/apps/ledger-app-bind/src/",
                             id: "srcdir",
                             :create => true,
                             type: "virtualbox")
@@ -25,31 +25,34 @@ Vagrant.configure("2") do |config|
     # Copy scripts and the Makefile to the VM
     config.vm.provision("file",
                         source: "./scripts/rebuild.sh",
-                        destination: "/home/vagrant/apps/ledger-app-compendia/scripts/")
+                        destination: "/home/vagrant/apps/ledger-app-bind/scripts/")
     config.vm.provision("file",
                         source: "./scripts/rebuild_nanos.sh",
-                        destination: "/home/vagrant/apps/ledger-app-compendia/scripts/")
+                        destination: "/home/vagrant/apps/ledger-app-bind/scripts/")
     config.vm.provision("file",
                         source: "./scripts/rebuild_nanox.sh",
-                        destination: "/home/vagrant/apps/ledger-app-compendia/scripts/")
+                        destination: "/home/vagrant/apps/ledger-app-bind/scripts/")
     config.vm.provision("file",
                         source: "./scripts/udev.sh",
-                        destination: "/home/vagrant/apps/ledger-app-compendia/scripts/")
+                        destination: "/home/vagrant/apps/ledger-app-bind/scripts/")
     config.vm.provision("file",
                         source: "./Makefile",
-                        destination: "/home/vagrant/apps/ledger-app-compendia/")
+                        destination: "/home/vagrant/apps/ledger-app-bind/")
 
     # Copy Icons
     config.vm.provision("file",
-                        source: "./icons/nanos_app_compendia.gif",
-                        destination: "/home/vagrant/apps/ledger-app-compendia/icons/")
+                        source: "./icons/nanos_app_bind.gif",
+                        destination: "/home/vagrant/apps/ledger-app-bind/icons/")
     config.vm.provision("file",
-                        source: "./icons/nanox_app_compendia.gif",
-                        destination: "/home/vagrant/apps/ledger-app-compendia/icons/")
+                        source: "./icons/nanox_app_bind.gif",
+                        destination: "/home/vagrant/apps/ledger-app-bind/icons/")
+                        config.vm.provision("file",
+                        source: "./icons/icon.gif",
+                        destination: "/home/vagrant/apps/ledger-app-bind/icons/")
 
     # VM configuration
     config.vm.provider "virtualbox" do |v|
-        v.name = "compendia Ledger App Development Box"
+        v.name = "Compendia Ledger App Development Box"
         v.customize ["modifyvm", :id, "--memory", "1024"]
 
         # Configure the Ledger Nano S/X USB connection
