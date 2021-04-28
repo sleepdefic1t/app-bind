@@ -34,10 +34,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 typedef struct stake_cancel_asset_t {
-    uint8_t id[HASH_32_LEN];
+    uint8_t id[HASH_64_LEN];
 } StakeCancel;
 
 ////////////////////////////////////////////////////////////////////////////////
 size_t deserializeStakeCancel(StakeCancel *cancel, const uint8_t *buffer, size_t size);
 
-#endif	// BND_OPERATIONS_TRANSACTIONS_TYPES_STAKE_CANCEL_H
+#endif  // BND_OPERATIONS_TRANSACTIONS_TYPES_STAKE_CANCEL_H
