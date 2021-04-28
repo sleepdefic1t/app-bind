@@ -33,15 +33,15 @@
 #include "constants.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-static const size_t TRANSACTION_TYPE_STAKE_EXTEND_SIZE = 40;
+static const size_t TRANSACTION_TYPE_STAKE_EXTEND_SIZE = 73ULL;
 
 ////////////////////////////////////////////////////////////////////////////////
 typedef struct stake_extend_asset_t {
-    uint8_t  id[HASH_32_LEN];
+    uint8_t  id[HASH_64_LEN];
     uint64_t duration;
 } StakeExtend;
 
 ////////////////////////////////////////////////////////////////////////////////
 size_t deserializeStakeExtend(StakeExtend *extend, const uint8_t *buffer, size_t size);
 
-#endif	// BND_OPERATIONS_TRANSACTIONS_TYPES_STAKE_EXTEND_H
+#endif  // BND_OPERATIONS_TRANSACTIONS_TYPES_STAKE_EXTEND_H

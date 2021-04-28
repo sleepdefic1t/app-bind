@@ -32,17 +32,23 @@
 
 #include "constants.h"
 
+#include "utils/unpack.h"
 #include "utils/utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 size_t deserializeStakeExtend(StakeExtend *extend, const uint8_t *buffer, size_t size) {
     if (extend == NULL || buffer == NULL ||
         size < TRANSACTION_TYPE_STAKE_EXTEND_SIZE) {
-        return 0U;
+        return 0ULL;
     }
 
-    MEMCOPY(extend->id, buffer, HASH_32_LEN);           // 32 Bytes
-    extend->duration = U8LE(buffer, HASH_32_LEN);       // 8 Bytes
+    const size_t hashLen = buffer[0];
+    if (hashLen != HASH_64_LEN) {
+        return 0ULL;
+    }
+
+    MEMCOPY(extend->id, &buffer[1], hashLen);               // 64 Bytes
+    extend->duration = U8LE(buffer, 1ULL + hashLen);        // 8 Bytes
 
     return TRANSACTION_TYPE_STAKE_EXTEND_SIZE;
 }
