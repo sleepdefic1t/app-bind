@@ -36,6 +36,11 @@
 #include "transactions/types/htlc_claim.h"
 #include "transactions/types/htlc_refund.h"
 
+#include "transactions/types/stake_create.h"
+#include "transactions/types/stake_redeem.h"
+#include "transactions/types/stake_cancel.h"
+#include "transactions/types/stake_extend.h"
+
 #include "platform.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -54,6 +59,11 @@ typedef union tx_asset_t {
     HtlcLock                    htlcLock;               // Type 8
     HtlcClaim                   htlcClaim;              // Type 9
     HtlcRefund                  htlcRefund;             // Type 10
+
+    StakeCreate                 stakeCreate;            // Group 100, Type 0
+    StakeRedeem                 stakeRedeem;            // Group 100, Type 1
+    StakeCancel                 stakeCancel;            // Group 100, Type 2
+    StakeExtend                 stakeExtend;            // Group 100, Type 3
 } tx_asset_t;
 
 #endif  // BND_OPERATIONS_TRANSACTIONS_TYPES_ASSETS_H
