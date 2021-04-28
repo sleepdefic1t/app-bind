@@ -33,17 +33,21 @@
 #include "constants.h"
 
 #include "utils/unpack.h"
+#include "utils/utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 size_t deserializeStakeCreate(StakeCreate *create, const uint8_t *buffer, size_t size) {
     if (create == NULL || buffer == NULL ||
-        size < TRANSACTION_TYPE_STAKE_CREATE_SIZE) {
-        return 0U;
+        size < TRANSACTION_TYPE_STAKE_CREATE_SIZE + ADDRESS_HASH_LEN) {
+        return 0ULL;
     }
 
     create->duration  = U8LE(buffer, 0);                            // 8 Bytes
     create->amount    = U8LE(buffer, sizeof(uint64_t));             // 8 Bytes
     create->timestamp = U8LE(buffer, sizeof(uint64_t) * 2ULL);      // 4 Bytes
+    MEMCOPY(create->recipientId,
+            buffer + TRANSACTION_TYPE_STAKE_CREATE_SIZE,
+            ADDRESS_HASH_LEN);                                      // 21 Bytes
 
-    return TRANSACTION_TYPE_STAKE_CREATE_SIZE;
+    return TRANSACTION_TYPE_STAKE_CREATE_SIZE + ADDRESS_HASH_LEN;
 }

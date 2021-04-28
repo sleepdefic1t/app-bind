@@ -33,10 +33,11 @@
 #include "constants.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-static const size_t TRANSACTION_TYPE_STAKE_CREATE_SIZE = 24;
+static const size_t TRANSACTION_TYPE_STAKE_CREATE_SIZE = 24ULL;
 
 ////////////////////////////////////////////////////////////////////////////////
 typedef struct stake_create_asset_t {
+    uint8_t  recipientId[ADDRESS_HASH_LEN];
     uint64_t duration;
     uint64_t amount;
     uint64_t timestamp;
