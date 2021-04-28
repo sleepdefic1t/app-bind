@@ -45,6 +45,11 @@
 #include "transactions/ux/htlc_claim_ux.h"
 #include "transactions/ux/htlc_refund_ux.h"
 
+#include "transactions/ux/stake_create_ux.h"
+#include "transactions/ux/stake_redeem_ux.h"
+#include "transactions/ux/stake_cancel_ux.h"
+#include "transactions/ux/stake_extend_ux.h"
+
 #include "transactions/ux/signatures_ux.h"
 
 #include "display/context.h"
@@ -61,6 +66,7 @@ static void SetUxCore(const Transaction *transaction) {
     size_t extendedStep = 0U;
     const bool hasVendorField = transaction->vendorFieldLength > 0U;
 
+    if (transaction->typeGroup == TRANSACTION_TYPEGROUP_100) {}
     switch (transaction->type) {
         case TRANSFER_TYPE:
             SetUxTransfer(transaction);
@@ -113,8 +119,50 @@ static void SetUxCore(const Transaction *transaction) {
     SetUxDisplay(steps, extendedStep);
 }
 
+static void SetUxCompendiaStake(const Transaction *transaction) {
+    size_t steps = 0U;
+    const size_t extendedStep = 0U;
+
+    switch (transaction->type) {
+        case STAKE_CREATE:
+            SetUxStakeCreate(transaction);
+            steps = UX_STAKE_CREATE_STEPS;
+            break;
+
+        case STAKE_REDEEM:
+            SetUxStakeRedeem(transaction);
+            steps = UX_STAKE_REDEEM_STEPS;
+            break;
+
+        case STAKE_CANCEL:
+            SetUxStakeCancel(transaction);
+            steps = UX_STAKE_CANCEL_STEPS;
+            break;
+
+        case STAKE_EXTEND:
+            SetUxStakeExtend(transaction);
+            steps = UX_STAKE_EXTEND_STEPS;
+            break;
+
+        default: break;
+    };
+
+#if defined(SUPPORTS_MULTISIGNATURE)
+    if (transaction->signatures.count > 0U) {
+        steps += SetUxSignatures(transaction, steps);
+    }
+#endif  // SUPPORTS_MULTISIGNATURE
+
+    SetUxDisplay(steps, extendedStep);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 void SetUx(const Transaction *transaction) {
     MEMSET_TYPE_BZERO(&displayCtx, DisplayContext);
-    SetUxCore(transaction);
+
+    if (transaction->typeGroup == TRANSACTION_TYPEGROUP_100) {
+        SetUxCompendiaStake(transaction);
+    } else {
+        SetUxCore(transaction);
+    }
 }
