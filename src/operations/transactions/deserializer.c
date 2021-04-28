@@ -68,16 +68,17 @@ static bool deserializeCommon(Transaction *transaction,
         return false;
     }
 
-    transaction->header     = buffer[HEADER_OFFSET];        // 1 Byte
-    transaction->version    = buffer[VERSION_OFFSET];       // 1 Byte
-    transaction->network    = buffer[NETWORK_OFFSET];       // 1 Byte
-    transaction->type       = U2LE(buffer, TYPE_OFFSET);    // 2 Bytes
+    transaction->header     = buffer[HEADER_OFFSET];            // 1 Byte
+    transaction->version    = buffer[VERSION_OFFSET];           // 1 Byte
+    transaction->network    = buffer[NETWORK_OFFSET];           // 1 Byte
+    transaction->typeGroup  = U4LE(buffer, TYPEGROUP_OFFSET);   // 4 Bytes
+    transaction->type       = U2LE(buffer, TYPE_OFFSET);        // 2 Bytes
 
-    MEMCOPY(transaction->senderPublicKey,                   // 33 Bytes
+    MEMCOPY(transaction->senderPublicKey,                       // 33 Bytes
             &buffer[SENDER_PUBLICKEY_OFFSET],
             PUBLICKEY_COMPRESSED_LEN);
 
-    transaction->fee        = U8LE(buffer, FEE_OFFSET);     // 8 Bytes
+    transaction->fee        = U8LE(buffer, FEE_OFFSET);         // 8 Bytes
 
     return true;
 }
@@ -129,8 +130,8 @@ static size_t deserializeHeader(Transaction *transaction,
                                 size_t size) {
     if (deserializeCommon(transaction, buffer, size) == false ||
         deserializeVendorField(transaction,
-                                &buffer[VF_LEN_OFFSET],
-                                size - VF_LEN_OFFSET) == false) {
+                               &buffer[VF_LEN_OFFSET],
+                               size - VF_LEN_OFFSET) == false) {
         return 0U;
     }
 
@@ -206,6 +207,54 @@ static size_t deserializeCoreAsset(Transaction *transaction,
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// Deserialize Compendia Staking (TypeGroup 100) Transaction Assets.
+//
+// @param Transaction *transaction: transaction object ptr.
+// @param const uint8_t *buffer:    of the serialized transaction[asset offset].
+// @param size_t size:              of the current buffer.
+//
+// @return   0: error
+// @return > 0: okay/asset size
+//
+// ---
+// Supported:
+//
+// - case STAKE_CREATE
+// - case STAKE_REDEEM
+// - case STAKE_CANCEL
+// - case STAKE_EXTEND
+//
+// ---
+static size_t deserializeStakeAsset(Transaction *transaction,
+                                    const uint8_t *buffer,
+                                    size_t size) {
+    switch (transaction->type) {
+        // Stake Create
+        case STAKE_CREATE:
+            return deserializeStakeCreate(
+                    &transaction->asset.stakeCreate, buffer, size);
+
+        // Stake Redeem
+        case STAKE_REDEEM:
+            return deserializeStakeRedeem(
+                    &transaction->asset.stakeRedeem, buffer, size);
+
+        // Stake Cancel
+        case STAKE_CANCEL:
+            return deserializeStakeCancel(
+                    &transaction->asset.stakeCancel, buffer, size);
+
+        // Stake Extend
+        case STAKE_EXTEND:
+            return deserializeStakeExtend(
+                    &transaction->asset.stakeExtend, buffer, size);
+
+        // Unknown Transaction Type
+        default: return 0U;
+    };
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // Deserialize v2 and v1 (DEPRECATED) Transactions
 //
 // @param const uint8_t *buffer:    of the serialized transaction.
@@ -234,9 +283,22 @@ bool deserialize(const uint8_t *buffer, size_t size) {
     }
 
     // Deserialize Asset
-    const size_t assetSize = deserializeCoreAsset(&transaction,
-                                                  &buffer[headerSize],
-                                                  size - headerSize);
+    size_t assetSize = 0U;
+    switch (transaction.typeGroup) {
+        case TRANSACTION_TYPEGROUP_1:
+            assetSize = deserializeCoreAsset(&transaction,
+                                             &buffer[headerSize],
+                                             size - headerSize);
+            break;
+
+        case TRANSACTION_TYPEGROUP_100:
+            assetSize = deserializeStakeAsset(&transaction,
+                                              &buffer[headerSize],
+                                              size - headerSize);
+            break;
+
+        default: break;
+    }
 
     if (assetSize == 0U) {
         MEMSET_TYPE_BZERO(&transaction, Transaction);
